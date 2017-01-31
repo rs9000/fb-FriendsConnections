@@ -1,0 +1,7 @@
+//This is an JSON example of friend list scraped from facebook
+data = '[{"name":"John Doe","url":"https://touch.facebook.com/JohnDoe"},
+		 {....},
+		  .
+		  .
+		  .
+		]';

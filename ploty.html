@@ -1,0 +1,75 @@
+<html>
+  <head>
+     <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+     <script src="friends.json"></script>
+  </head>
+  <body>
+
+    <div id="tester" style="width:100%;height:100%;">
+
+    </div>
+
+    <script language="javascript">
+      var mydata = JSON.parse(data);
+
+      var names = [];
+      var urls = [];
+      var x_cord = [];
+      var y_cord = [];
+      var z_cord = [];
+
+      for(var i=0;i<mydata.length;i++){
+        names.push(mydata[i].name);
+        urls.push(mydata[i].url);
+       // x_cord.push(Math.round(Math.random() * (window.innerWidth/1.5)));
+       // y_cord.push(Math.round(Math.random() * (window.innerHeight)));
+        // z_cord.push(Math.round(Math.random() * (window.innerHeight)));
+       x_cord.push(Math.round(window.innerWidth + (1 + 5 * i) * Math.cos(i)));
+       y_cord.push(Math.round(window.innerHeight + (1 + 5 * i) * Math.sin(i)));
+       z_cord.push(Math.round(i*-10));
+
+
+      }
+
+      console.log(x_cord);
+      var tester = document.getElementById('tester');
+      var data = [{
+                              type: 'scatter3d',
+                              mode: 'markers+text',
+                              xref: 'paper',
+                              x: x_cord,
+                              y: y_cord,
+                              z: z_cord,
+                             // xanchor: 'right',
+                             // yanchor: 'middle',
+                              text: names,
+                              showarrow: false,
+                                font: {
+                                  family: 'Arial',
+                                  size: 16,
+                                  color: 'black'
+                                },
+                             marker: {
+                                        color: 'darkblue',
+                                        size: 12,
+                                        symbol: 'circle',
+                                        text: "aa",
+                                        line: {
+                                             color: 'rgb(204, 204, 204)',
+                                        width: 1},
+                                        opacity: 0.8}
+                          }]
+
+
+      var layout =  {
+                      margin: { t: 0 }
+                    }
+
+
+      Plotly.plot(tester,data,layout);
+
+    </script>
+
+
+  </body>
+</html>
