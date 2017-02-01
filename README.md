@@ -9,7 +9,7 @@ Download from: https://plot.ly/
 Or use CDN: https://cdn.plot.ly/plotly-latest.min.js
 
 ### Json Friend List
-Scrap it from: https://touch.facebook.com/rs.dicarlo/friends 
+Scrap it from: https://touch.facebook.com/me/friends 
 <br>
 FB order it by your interactions with your friends.
 
